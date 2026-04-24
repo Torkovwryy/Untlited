@@ -1,0 +1,52 @@
+name: Bug Report
+description: Create a report to help us improve the SDK
+title: "[BUG] "
+labels: ["bug", "triage"]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this bug report!
+
+  - type: input
+    attributes:
+      label: SDK Version
+      description: Which version of the SDK are you using?
+      placeholder: ex. 1.2.0
+    validations:
+      required: true
+
+  - type: input
+    attributes:
+      label: Node.js / Environment
+      description: What environment are you running the SDK in? (Node.js version, Browser, etc.)
+      placeholder: ex. Node.js v18.17.0
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Description
+      description: A clear and concise description of what the bug is.
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to Reproduce
+      description: Minimal code block or steps to reproduce the issue.
+      placeholder: |
+        1. Initialize SDK with...
+        2. Call method X...
+        3. See error Y...
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Expected Behavior
+      description: A clear and concise description of what you expected to happen.
+    validations:
+      required: true
