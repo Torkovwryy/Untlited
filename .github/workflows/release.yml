@@ -1,0 +1,50 @@
+name: Release Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+  pull-requests: write
+  id-token: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Release Please Action
+        id: release
+        uses: googleapis/release-please-action@v5
+        with:
+          release-type: node
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Enable Corepack
+        if: ${{ steps.release.outputs.release_created }}
+        run: corepack enable
+
+      - name: Setup Node.js
+        if: ${{ steps.release.outputs.release_created }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.x'
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Install Dependencies
+        if: ${{ steps.release.outputs.release_created }}
+        run: yarn install --immutable
+
+      - name: Build SDK
+        if: ${{ steps.release.outputs.release_created }}
+        run: yarn build
+
+      - name: Publish to NPM
+        if: ${{ steps.release.outputs.release_created }}
+        run: npm publish --provenance --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
