@@ -1,6 +1,6 @@
 {
   "name": "xelus",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A highly extensible, plugin-driven TypeScript SDK core for building resilient API clients.",
   "type": "module",
   "main": "dist/index.js",
