@@ -2,7 +2,7 @@
 
 > A highly extensible, plugin-driven TypeScript SDK core for building resilient API clients.
 
-[![CI](https://github.com/Torkovwryy/xelus/actions/workflows/ci.yml/badge.svg)](https://github.com/Torkovwryy/xelus/actions/workflows/ci.yml)
+[![CI](https://github.com/Torkovwryy/xelus/actions/workflows/CI.yml/badge.svg)](https://github.com/Torkovwryy/xelus/actions/workflows/CI.yml)
 [![npm version](https://badge.fury.io/js/xelus.svg)](https://badge.fury.io/js/xelus)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
