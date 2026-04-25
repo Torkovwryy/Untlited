@@ -19,16 +19,16 @@
 ## Installation
 
 ```bash
-yarn add @tarkov/xelus
+yarn add xelus
 # or
-npm install @tarkov/xelus
+npm install xelus
 # or
-pnpm add @tarkov/xelus
+pnpm add xelus
 ```
 
 ## Quick Start
 ```ts
-import { Xelus } from '@tarkov/xelus'
+import { Xelus } from 'xelus'
 
 // 1. Initialize the Core
 const api = new Xelus({
